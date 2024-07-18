@@ -164,7 +164,8 @@ A testing script for the Google Vision API. This script is used to test the capa
 
 An experimental file used for testing the auto-rotation of documents. This script explores methods for correctly orienting scanned or photographed documents to facilitate accurate text extraction.
 
-**Acknowledgements**
+## Acknowledgements
+
 Special thanks to Ashish K. Dash from CotTheta LLC for mentoring and guidance throughout this project.
 
 This updated README provides a comprehensive overview of your project, including installation instructions, usage, and detailed descriptions of each file's functionality, specifically highlighting the license and bank card recognition features, as well as the document detection capabilities, including handling multiple paragraphs and handwritten paragraphs using the Google Cloud Vision API. The additions also include descriptions for the testing scripts and the experimental auto-rotation script.
