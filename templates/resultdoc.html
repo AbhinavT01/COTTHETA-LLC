@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed License Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .bg-gradient-to-r {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+
+        .bg-dark-blue {
+            background-color: #2c3e50; /* Dark blue color */
+        }
+
+        .bg-light-blue {
+            background-color: #3498db; /* Light blue color */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .file-label {
+            border: 2px dashed #3498db;
+            padding: 2rem;
+            text-align: center;
+            transition: background 0.3s ease, border 0.3s ease;
+            color: #fff;
+        }
+
+        .file-label:hover {
+            background: rgba(52, 152, 219, 0.1);
+            border: 2px dashed #fff;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .btn-upload {
+            background: #4FD1C5;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn-upload:hover {
+            background: #3caea3;
+        }
+
+        .output-field {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            overflow: auto;
+            white-space: pre-wrap; /* Preserve line breaks */
+            resize: vertical; /* Allow vertical resizing */
+        }
+
+        .output-field:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        .download-btn {
+            background: #3498db;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            display: none; /* Initially hidden */
+            margin-top: 1rem;
+        }
+
+        .download-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r">
+    <!-- Header -->
+    <header class=" bg-gradient-to-r text-white font-weight-bold py-4 px-6 flex justify-between items-center relative w-full " >
+        <h1 class="text-2xl">Processed License Card</h1>
+        <div id="currentTime" class="text-lg px-4 py-2 rounded bg-green-500 hover:bg-green-600 transition duration-300 absolute top-2 right-4"></div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
+        <!-- Image Preview Toggle Button -->
+        <button id="togglePreview" class="bg-light-blue text-white font-bold py-2 px-4 rounded-md mb-4">Toggle Image Preview</button>
+
+        <!-- Image Preview -->
+        <div id="imageContainer" class="image-container hidden">
+            <label for="image" class="block font-bold text-white">Image:</label>
+            <img id="image-preview" src="#" alt="Image Preview" class="mx-auto" style="max-width: 250px; max-height: 250px;">
+        </div>
+
+        <!-- Form -->
+        <form action="#" method="POST" id="resultForm">
+            <div id="resultContainer">
+                <!-- Single textarea for complete result -->
+                <div class="key-value mb-4">
+                    <label for="completeResult" class="block font-bold text-white mb-2">Complete Result:</label>
+                    <textarea id="completeResult" name="completeResult" class="output-field bg-gray-100 border border-gray-300 rounded-md px-3 py-2 w-full focus:outline-none focus:border-blue-500 transition duration-300 resize-none" rows="10">
+                        {{result}}
+                    </textarea>
+                </div>
+                <!-- Download button -->
+                <a id="downloadLink" class="download-btn" href="#" download="output.csv">Download CSV</a>
+            </div>
+            <!-- Hidden submit button -->
+            <button type="submit" class="hidden"></button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r vsc-initialized">
+        <p>License Card Processor &copy; 2024</p>
+    </footer>
+
+    <!-- JavaScript to display the current time with seconds and toggle image preview -->
+    <script>
+        // JavaScript to display the current time with seconds
+        const currentTimeElement = document.getElementById('currentTime');
+
+        function updateTime() {
+            const currentTime = new Date();
+            const hours = currentTime.getHours().toString().padStart(2, '0');
+            const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+            const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            currentTimeElement.textContent = timeString;
+        }
+
+        updateTime(); // Update time immediately
+        setInterval(updateTime, 1000); // Update time every second
+
+        // JavaScript to toggle image preview
+        const toggleButton = document.getElementById('togglePreview');
+        const imageContainer = document.getElementById('imageContainer');
+
+        toggleButton.addEventListener('click', () => {
+            imageContainer.classList.toggle('hidden');
+        });
+
+        // JavaScript to set download link for CSV
+        const downloadLink = document.getElementById('downloadLink');
+        const completeResultTextarea = document.getElementById('completeResult');
+
+        downloadLink.addEventListener('click', (event) => {
+            const csvContent = completeResultTextarea.value;
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+        });
+
+        // JavaScript to fetch and display the image from local storage
+        const storedImage = localStorage.getItem('uploadedImage');
+        if (storedImage) {
+            const imagePreview = document.getElementById('image-preview');
+            imagePreview.src = storedImage;
+        }
+    </script>
+</body>
+</html>

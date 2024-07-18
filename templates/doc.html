@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Uploader</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .navbar a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            margin: 80px auto 50px auto; /* Adjusted for fixed navbar */
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .upload-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+
+        #imagePreviewContainer {
+            margin-top: 20px;
+        }
+
+        #imagePreview {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/" class="hover:opacity-80">Home</a>
+        <a href="/doc" class="hover:opacity-80">Doc Scanner</a>
+        <a href="/table" class="hover:opacity-80">Table Scan</a>
+        <a href="/bank" class="hover:opacity-80">Bank Card</a>
+    </div>
+
+    <div class="container">
+        <h1 class="text-2xl font-bold mb-4">Document Uploader</h1>
+        <form action="/uploaddoc" method="post" enctype="multipart/form-data" id="uploadForm">
+            <div class="mb-6">
+                <input type="file" name="file" id="fileInput" class="file-input" required>
+                <label for="fileInput" class="upload-btn cursor-pointer">
+                    <i class="fas fa-folder-open mr-2"></i> Choose Document
+                </label>
+            </div>
+            <div id="imagePreviewContainer" class="hidden">
+                <h3 class="text-lg font-semibold mb-2 text-gray-700">Document Preview</h3>
+                <div id="previewWrapper" class="overflow-hidden mx-auto rounded-lg shadow-md" style="max-width: 100%; max-height: 400px;">
+                    <img id="imagePreview" src="#" alt="Document Preview" class="mx-auto bg-contain bg-center h-full">
+                </div>
+            </div>
+            <button type="submit" class="btn-upload mt-4">
+                <i class="fas fa-upload mr-2"></i> Upload
+            </button>
+        </form>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function previewImage() {
+            const fileInput = document.getElementById('fileInput');
+            const imagePreview = document.getElementById('imagePreview');
+            const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+            const previewWrapper = document.getElementById('previewWrapper');
+
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreviewContainer.classList.remove('hidden');
+                    previewWrapper.style.maxHeight = '400px';
+
+                    localStorage.setItem('uploadedImage', e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        document.getElementById('fileInput').addEventListener('change', previewImage);
+    </script>
+</body>
+</html>
