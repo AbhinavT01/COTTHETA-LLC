@@ -37,8 +37,8 @@ This repository contains the OCR system developed during my internship at CotThe
 
     export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service/account/key.json"
 
--**Start the Flask web application:**
-  python app.py
+- **Start the Flask web application:**
+-       python app.py
 Open your web browser and navigate to http://127.0.0.1:5000/.
 Upload a document to be processed and view the results on the result page.
 
