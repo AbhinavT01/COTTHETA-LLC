@@ -30,17 +30,18 @@ This repository contains the OCR system developed during my internship at CotThe
    ```sh
   pip install -r requirements.txt
 
--**Set up Google Cloud Vision API credentials:**
+- **Set up Google Cloud Vision API credentials:**
 
   Download your service account key from the Google Cloud Console.
   Set the path to your service account key in the environment variable GOOGLE_APPLICATION_CREDENTIALS:
 
-    export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service/account/key.json"
+      export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your/service/account/key.json"
 
-- **Start the Flask web application:**
--       python app.py
-Open your web browser and navigate to http://127.0.0.1:5000/.
-Upload a document to be processed and view the results on the result page.
+ -  **Start the Flask web application:**
+      ```sh
+        python app.py
+-  Open your web browser and navigate to http://127.0.0.1:5000/.
+-  Upload a document to be processed and view the results on the result page.
 
 **File Structure**
 
