@@ -2,7 +2,7 @@
 
 ## **COTTHETA LLC OCR System**
 
-This repository contains the OCR system developed during my internship at CotTheta LLC. The system is designed to detect and extract text from various documents, clean the text, and rectify OCR errors. The extracted information is processed to identify patterns, crop relevant parts of the image, and categorize addresses and human names. The results are then displayed on a Flask web server.
+This repository houses an advanced OCR system developed during my internship at CotTheta LLC. The system excels in detecting and extracting text, autofilling extracted information into specified fields, and accurately identifying documents with paragraphs and handwritten content. It also robustly detects tabular data, whether handwritten or digital, enhancing its versatility in document processing." The results are then displayed on a Flask web server.
 
 ### Table of Contents
 
@@ -166,6 +166,6 @@ An experimental file used for testing the auto-rotation of documents. This scrip
 
 ## Acknowledgements
 
-Special thanks to Ashish K. Dash from CotTheta LLC for mentoring and guidance throughout this project.
+Special thanks to Ashish K. Dash and Mallesham  from CotTheta LLC for mentoring and guidance throughout this project.
 
 This updated README provides a comprehensive overview of your project, including installation instructions, usage, and detailed descriptions of each file's functionality, specifically highlighting the license and bank card recognition features, as well as the document detection capabilities, including handling multiple paragraphs and handwritten paragraphs using the Google Cloud Vision API. The additions also include descriptions for the testing scripts and the experimental auto-rotation script.
