@@ -46,6 +46,7 @@ This repository contains the OCR system developed during my internship at CotThe
 **File Structure**
 
 COTTHETA-LLC/
+│
 ├── Address.py
 ├── README.md
 ├── app.py
@@ -67,10 +68,11 @@ COTTHETA-LLC/
 ├── visionapi_testing.py
 ├── sample_data/
 ├── templates/
-│ ├── index.html
-│ └── result.html
+│   ├── index.html
+│   ├── result.html
 └── static/
-└── styles.css
+    └── styles.css
+
 
 
 # Project Overview
