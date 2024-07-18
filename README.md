@@ -67,10 +67,10 @@ COTTHETA-LLC/
 ├── visionapi_testing.py
 ├── sample_data/
 ├── templates/
-│   ├── index.html
-│   └── result.html
+│ ├── index.html
+│ └── result.html
 └── static/
-    └── styles.css
+└── styles.css
 
 
 # Project Overview
