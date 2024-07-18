@@ -144,7 +144,7 @@ Detects human names using the Google Natural Language Processing Toolkit. This m
 
 Extracts relevant information from bank cards, such as card number, expiry date, CVV, and card type using regex patterns. This module is imported and used in `main.py`.
 
-## analyze_entities.py
+## bank_name.py
 
 Detects bank names from the text using NLP models. This module is imported and used in `main.py`.
 
