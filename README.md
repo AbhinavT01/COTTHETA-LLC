@@ -1,22 +1,29 @@
-# COTTHETA-LLC
-**COTTHETA LLC OCR System**
+# COTTHETA LLC OCR System
+
+## **COTTHETA LLC OCR System**
+
 This repository contains the OCR system developed during my internship at CotTheta LLC. The system is designed to detect and extract text from various documents, clean the text, and rectify OCR errors. The extracted information is processed to identify patterns, crop relevant parts of the image, and categorize addresses and human names. The results are then displayed on a Flask web server.
 
-Table of Contents
-Requirements
-Installation
-Usage
-File Structure
-Detailed Description
-Acknowledgements
-Requirements
-Python 3.10.11
-Installation
+### Table of Contents
 
+- **Requirements**
+- **Installation**
+- **Usage**
+- **File Structure**
+- **Detailed Description**
+- **Acknowledgements**
 
-**Clone the repository:**
-git clone https://github.com/AbhinavT01/COTTHETA-LLC.git
-cd COTTHETA-LLC
+### Requirements
+
+- Python 3.10.11
+
+### Installation
+
+- **Clone the repository:**
+  ```sh
+  git clone https://github.com/AbhinavT01/COTTHETA-LLC.git
+  cd COTTHETA-LLC
+
 
 
 **Install the required Python packages:**
