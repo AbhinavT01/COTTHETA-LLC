@@ -73,7 +73,10 @@ COTTHETA-LLC/
     └── styles.css
 
 
-##**Files Overview**
+# Project Overview
+
+## Files and Modules
+
 - **Address.py**: Identifies the type of address (street, city, zip, state) from the extracted text.
 - **README.md**: Documentation file.
 - **app.py**: Contains the Flask web application.
