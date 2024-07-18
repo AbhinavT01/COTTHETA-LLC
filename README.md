@@ -111,54 +111,58 @@ COTTHETA-LLC/
 
 
 
-_**Detailed Description**_
+# Detailed Description
 
-**app.py**
+## app.py
+
 This file contains the Flask web application. It serves the starting page and displays the results of the OCR processing. It includes routes for uploading documents and displaying processed results.
 
-**main.py**
-1.The core of the OCR system. It performs the following tasks:
-2.Detects text from documents.
-3.Cleans the text to remove unwanted characters and rectifies OCR errors.
-4.Passes cleaned text to other modules for further processing.
+## main.py
 
-**patternfile.py**
-Contains a large set of regex patterns that match the extracted text. Each pattern checks whether the text is a required field or not. These patterns are imported and used in main.py.
+The core of the OCR system. It performs the following tasks:
+1. Detects text from documents.
+2. Cleans the text to remove unwanted characters and rectifies OCR errors.
+3. Passes cleaned text to other modules for further processing.
 
-**cropimage.py**
-Uses OpenCV to find the largest rectangle or square bounding box in the image and crops that box to get the relevant part of the document. This function is imported and used in main.py.
+## patternfile.py
 
-**address.py**
-Identifies the type of address (street, city, zip, state) from the extracted text. This module is imported and used in main.py.
+Contains a large set of regex patterns that match the extracted text. Each pattern checks whether the text is a required field or not. These patterns are imported and used in `main.py`.
 
-human_detection.py
-Detects human names using the Google Natural Language Processing Toolkit. This module is imported and used in main.py.
+## cropimage.py
 
-**card_detect.py**
-Extracts relevant information from bank cards, such as card number, expiry date, CVV, and card type using regex patterns. This module is imported and used in main.py.
+Uses OpenCV to find the largest rectangle or square bounding box in the image and crops that box to get the relevant part of the document. This function is imported and used in `main.py`.
 
-**analyze_entities.py**
-Detects bank names from the text using NLP models. This module is imported and used in main.py.
+## address.py
 
-**document_detection.py**
-Detects and extracts text from documents, including multiple paragraphs and handwritten paragraphs, using the Google Cloud Vision API. The detect_document_text function initializes the Vision API client, reads the image file, and performs document text detection. If text is detected, it is processed and displayed, capable of handling both printed and handwritten text.
+Identifies the type of address (street, city, zip, state) from the extracted text. This module is imported and used in `main.py`.
 
-**pp.py**
+## human_detection.py
+
+Detects human names using the Google Natural Language Processing Toolkit. This module is imported and used in `main.py`.
+
+## card_detect.py
+
+Extracts relevant information from bank cards, such as card number, expiry date, CVV, and card type using regex patterns. This module is imported and used in `main.py`.
+
+## analyze_entities.py
+
+Detects bank names from the text using NLP models. This module is imported and used in `main.py`.
+
+## document_detection.py
+
+Detects and extracts text from documents, including multiple paragraphs and handwritten paragraphs, using the Google Cloud Vision API. The `detect_document_text` function initializes the Vision API client, reads the image file, and performs document text detection. If text is detected, it is processed and displayed, capable of handling both printed and handwritten text.
+
+## pp.py
+
 A testing script for bank data. This script is used to test the functionality of extracting and processing data from bank documents.
 
-**visionapi_testing.py**
+## visionapi_testing.py
+
 A testing script for the Google Vision API. This script is used to test the capabilities and functionality of the Google Vision API in processing and extracting text from images.
 
-**autorotate.py**
+## autorotate.py
+
 An experimental file used for testing the auto-rotation of documents. This script explores methods for correctly orienting scanned or photographed documents to facilitate accurate text extraction.
-
-**templates/**
-Contains HTML files:
-index.html: Starting page of the web server.
-result.html: Displays the OCR results.
-
-**static/**
-Contains static files such as CSS for styling the web application.
 
 **Acknowledgements**
 Special thanks to Ashish K. Dash from CotTheta LLC for mentoring and guidance throughout this project.
