@@ -46,78 +46,61 @@ This repository contains the OCR system developed during my internship at CotThe
 **File Structure**
 
 COTTHETA-LLC/
-│
-├── Address.py                  
-├── README.md                     
-├── app.py                        
-├── autocrop.py                  
-├── autorotate.py                
-├── bank_name.py                 
-├── card_detect.py                
-├── cropimage.py               
-├── doc_text_detect.py           
-├── human_detection.py           
-├── human_detection2.py                               
-├── main.py                                              
-├── patternfile.py                
-├── person name detect.py        
-├── pp.py                       
-├── regextest.py                
-├── requirements.txt             
-├── rotated_image.jpg                               
-├── visionapi_testing.py        
-├── sample_data/                
-├── templates/                    
+├── Address.py
+├── README.md
+├── app.py
+├── autocrop.py
+├── autorotate.py
+├── bank_name.py
+├── card_detect.py
+├── cropimage.py
+├── doc_text_detect.py
+├── human_detection.py
+├── human_detection2.py
+├── main.py
+├── patternfile.py
+├── person name detect.py
+├── pp.py
+├── regextest.py
+├── requirements.txt
+├── rotated_image.jpg
+├── visionapi_testing.py
+├── sample_data/
+├── templates/
 │   ├── index.html
-│   ├── result.html
-├── static/
-│   ├── styles.css
+│   └── result.html
+└── static/
+    └── styles.css
 
 
-**Address.py**: Identifies the type of address (street, city, zip, state) from the extracted text.
+##**Files Overview**
+- **Address.py**: Identifies the type of address (street, city, zip, state) from the extracted text.
+- **README.md**: Documentation file.
+- **app.py**: Contains the Flask web application.
+- **autocrop.py**: Contains the `crop_image` function for auto-cropping images.
+- **autorotate.py**: Experimental file for auto-rotating documents.
+- **bank_name.py**: Extracts relevant information from bank cards, including bank name.
+- **card_detect.py**: Extracts relevant information from bank cards, such as card number, expiry date, CVV, and card type using regex patterns.
+- **cropimage.py**: Uses OpenCV to find the largest rectangle or square bounding box in the image and crops that box to get the relevant part of the document.
+- **doc_text_detect.py**: Detects and extracts text from documents, including multiple paragraphs and handwritten paragraphs, using the Google Cloud Vision API.
+- **human_detection.py**: Detects human names using Google Natural Language Processing Toolkit.
+- **human_detection2.py**: An alternate human detection script.
+- **main.py**: Contains the main logic for the OCR system.
+- **patternfile.py**: Contains a large set of regex patterns that match the extracted text.
+- **person name detect.py**: Detects person names using patterns and models.
+- **pp.py**: Bank data testing script.
+- **regextest.py**: Tests regex patterns.
+- **requirements.txt**: Lists the required Python packages.
+- **visionapi_testing.py**: Google Vision API testing script.
 
-**README.md**: Documentation file.
+## Directories
 
-**app.py**: Contains the Flask web application.
-
-**autocrop.py**: Contains the crop_image function for auto-cropping images.
-
-**autorotate.py**: Experimental file for auto-rotating documents.
-
-**bank_name.py**: Extracts relevant information from bank cards, including bank name.
-
-**card_detect.py**: Extracts relevant information from bank cards, such as card number, expiry date, CVV, and card type using regex patterns.
-**cropimage.py**: Uses OpenCV to find the largest rectangle or square bounding box in the image and crops that box to get the relevant part of the document.
-
-**doc_text_detect.py**: Detects and extracts text from documents, including multiple paragraphs and handwritten paragraphs, using the Google Cloud Vision API.
-
-**human_detection.py**: Detects human names using Google Natural Language Processing Toolkit.
-
-**human_detection2.py**: An alternate human detection script.
-
-**main.py**: Contains the main logic for the OCR system.
-
-**patternfile.py**: Contains a large set of regex patterns that match the extracted text.
-
-**person name detect.py**: Detects person names using patterns and models.
-
-**pp.py**: Bank data testing script.
-
-**regextest.py**: Tests regex patterns.
-
-**requirements.txt**: Lists the required Python packages.
-
-**visionapi_testing.py**: Google Vision API testing script.
-
-**sample_data/**: Contains sample data files.
-
-**templates/**: Contains HTML templates for the web application.
-
-**index.html**: Starting page of the web server.
-
-**result.html**: Displays the OCR results.
-
-**static/**: Contains static files such as CSS for styling the web application.
+- **sample_data/**: Contains sample data files.
+- **templates/**: Contains HTML templates for the web application.
+  - **index.html**: Starting page of the web server.
+  - **result.html**: Displays the OCR results.
+- **static/**: Contains static files such as CSS for styling the web application.
+  - **styles.css**: CSS file for styling the web application.
 
 
 
