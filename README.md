@@ -47,31 +47,33 @@ This repository contains the OCR system developed during my internship at CotThe
 
 COTTHETA-LLC/
 │
-├── Address.py
-├── README.md
-├── app.py
-├── autocrop.py
-├── autorotate.py
-├── bank_name.py
-├── card_detect.py
-├── cropimage.py
-├── doc_text_detect.py
-├── human_detection.py
-├── human_detection2.py
-├── main.py
-├── patternfile.py
-├── person name detect.py
-├── pp.py
-├── regextest.py
-├── requirements.txt
-├── rotated_image.jpg
-├── visionapi_testing.py
-├── sample_data/
-├── templates/
+├── Address.py                  
+├── README.md                     
+├── app.py                        
+├── autocrop.py                  
+├── autorotate.py                
+├── bank_name.py                 
+├── card_detect.py                
+├── cropimage.py               
+├── doc_text_detect.py           
+├── human_detection.py           
+├── human_detection2.py                               
+├── main.py                                              
+├── patternfile.py                
+├── person name detect.py        
+├── pp.py                       
+├── regextest.py                
+├── requirements.txt             
+├── rotated_image.jpg                               
+├── visionapi_testing.py        
+├── sample_data/                
+├── templates/                    
 │   ├── index.html
 │   ├── result.html
-└── static/
-    └── styles.css
+├── static/
+│   ├── styles.css
+
+
 
 
 
