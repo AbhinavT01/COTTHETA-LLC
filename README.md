@@ -133,13 +133,25 @@ The cleaned text is further analyzed to extract specific information such as per
 ## patternfile.py
 
 Contains a large set of regex patterns that match the extracted text. Each pattern checks whether the text is a required field or not. These patterns are imported and used in `main.py`.
-This script defines a crop_image function that processes an input image to find and crop a specific region based on detected contours. The function first resizes the image and rotates it if necessary to ensure consistency. It converts the image to grayscale, applies Gaussian blur to reduce noise, and uses adaptive thresholding to create a binary image. Morphological operations enhance contours, which are then filtered based on area and aspect ratio to find significant contours. The function identifies the largest contour, crops the image to this contour, and returns the cropped image. If no contours are found, it returns the original image.
-
-This script is set up to demonstrate the function with commented-out code for reading, processing, displaying, and saving images, but it’s not actively executing those steps.
+This repository includes a collection of regular expression patterns for extracting key information from textual data, commonly found in documents such as IDs, licenses, or other personal records. The patterns are designed to handle a variety of formats and labels, making it easier to process and extract relevant data from unstructured text.
+- **FEATURES**-
+    -Date of Birth (DOB): Detects dates in multiple formats with labels like DOB and Date of Birth.
+    -Expiry Date: Identifies expiry dates with keywords like EXP.
+    -Issue Date: Extracts issue dates using labels such as ISSUED.
+    -Street Address: Matches common address formats and suffixes.
+    -Sex: Captures gender information from labels like SEX.
+    -Height: Recognizes height in feet, inches, or centimeters.
+    -Weight: Extracts weight information in kilograms or pounds.
+    -License Number: Detects various formats for license numbers.
+    -Class: Identifies license classifications with terms like CLASS.
+    -Restrictions: Finds restrictions using terms like REST.
+    -Replaced Date: Extracts dates for replaced documents.
+  
 
 ## cropimage.py
 
 Uses OpenCV to find the largest rectangle or square bounding box in the image and crops that box to get the relevant part of the document. This function is imported and used in `main.py`.
+This script defines a crop_image function that processes an input image to find and crop a specific region based on detected contours. The function first resizes the image and rotates it if necessary to ensure consistency. It converts the image to grayscale, applies Gaussian blur to reduce noise, and uses adaptive thresholding to create a binary image. Morphological operations enhance contours, which are then filtered based on area and aspect ratio to find significant contours. The function identifies the largest contour, crops the image to this contour, and returns the cropped image. If no contours are found, it returns the original image.
 
 ## address.py
 
@@ -196,7 +208,7 @@ The Python script processes an image to detect text within table cells and gener
 - human_detection2.py : alternate method to detect human names used name parser library(python) to detect names.
 - auto_rotate.py: to auto align the document in right position.Not works for all documents.
 - pp.py: sample  file  to check bank_data  algorithm
-- doc_text_detect2:  testing for  structured document data as present in file . but sometimes data  is very dioriented.
+- doc_text_detect2:  testing for  structured document data as present in file . but sometimes data  is very diSoriented.
 
 ## Acknowledgements
 
