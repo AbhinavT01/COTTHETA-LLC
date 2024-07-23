@@ -97,6 +97,7 @@ COTTHETA-LLC/
 - **card_detect.py**: Extracts relevant information from bank cards, such as card number, expiry date, CVV, and card type using regex patterns.
 - **cropimage.py**: Uses OpenCV to find the largest rectangle or square bounding box in the image and crops that box to get the relevant part of the document.
 - **doc_text_detect.py**: Detects and extracts text from documents, including multiple paragraphs and handwritten paragraphs, using the Google Cloud Vision API.
+- **doc_text_detect2.py**:detects and extracts text from documents. alternate of doc_text_detect  for structured data as in document.
 - **human_detection.py**: Detects human names using Google Natural Language Processing Toolkit.
 - **human_detection2.py**: An alternate human detection script.
 - **main.py**: Contains the main logic for the OCR system.
@@ -106,6 +107,7 @@ COTTHETA-LLC/
 - **regextest.py**: Tests regex patterns.
 - **requirements.txt**: Lists the required Python packages.
 - **visionapi_testing.py**: Google Vision API testing script.
+- **TableOCR.py**:Detects Tabular Data 
 
 ## Directories
 
