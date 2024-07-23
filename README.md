@@ -70,8 +70,15 @@ COTTHETA-LLC/
 ├── templates/                    
 │----├── index.html
 │----── result.html
-├── static/
-│----├── styles.css
+│----── resultdoc.html
+│----── resulttable.html
+│----── resultbank.html
+│----── bank.html
+│----── table.html
+│----── doc.html
+
+
+
 
 
 
