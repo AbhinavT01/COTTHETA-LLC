@@ -63,15 +63,15 @@ COTTHETA-LLC/
 ├── person name detect.py        
 ├── pp.py                       
 ├── regextest.py                
-├── requirements.txt             
-├── rotated_image.jpg                               
+├── requirements.txt               
+├── doc_text_detect2.py
 ├── visionapi_testing.py        
 ├── sample_data/                
 ├── templates/                    
-│   ├── index.html
-│   ├── result.html
+│----├── index.html
+│----── result.html
 ├── static/
-│   ├── styles.css
+│----├── styles.css
 
 
 
