@@ -1,6 +1,6 @@
 import os
-import re
 from google.cloud import vision
+
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'myservicegapi.json'
 
 def detect_document_text(image_path):
@@ -20,8 +20,8 @@ def detect_document_text(image_path):
     annotations = response.full_text_annotation
 
     if annotations:
-        # Remove extra spaces and ensure no leading spaces in the first line
-        formatted_text = re.sub(r'\s+', ' ', annotations.text).strip()
+        # Return the raw detected text
+        formatted_text = annotations.text
 
         print('Detected document text:')
         print(formatted_text)
