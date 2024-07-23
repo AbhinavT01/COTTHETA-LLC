@@ -1,4 +1,4 @@
-from nameparser import HumanName
+ from nameparser import HumanName
 
 # Function to parse a person's name and return as a single full name without suffix and prefix
 def extract_person_names1(name_string):
