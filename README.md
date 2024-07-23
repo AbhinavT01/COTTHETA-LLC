@@ -106,9 +106,16 @@ COTTHETA-LLC/
 - **templates/**: Contains HTML templates for the web application.
   - **index.html**: Starting page of the web server.
   - **result.html**: Displays the OCR results.
+  - **bank.html**:Displays the  bank card image uploadation page.
+  - **doc.html**:Display the doc image uploadation page.
+  - **table.html**: Display the table image uploadation page.
+  - **resultbank.html**: Display the bankcard processed result.
+  - **resulttable.html**:Display the option to download csv file for tabular data processed image.
+  - **resultdoc.htmL**: Display he doc processed result.
+  - 
 - **static/**: Contains static files such as CSS for styling the web application.
   - **styles.css**: CSS file for styling the web application.
-
+-**uploads/outputcsv**: Csv file generated from tabular data  is saved in outputcsv folder and  using its path url download option allow to download the file.
 
 
 # Detailed Description
@@ -164,8 +171,14 @@ A testing script for the Google Vision API. This script is used to test the capa
 
 An experimental file used for testing the auto-rotation of documents. This script explores methods for correctly orienting scanned or photographed documents to facilitate accurate text extraction.
 
+### Experimental files
+- human_detection2.py : alternate method to detect human names used name parser library(python) to detect names.
+- auto_rotate.py: to auto align the document in right position.Not works for all documents.
+- pp.py: sample  file  to check bank_data  algorithm
+- doc_text_detect2:  testing for  structured document data as present in file . but sometimes data  is very dioriented.
+
 ## Acknowledgements
 
-Special thanks to Ashish K. Dash and Mallesham  from CotTheta LLC for mentoring and guidance throughout this project.
+Special thanks to Ashish K. Dash and Mallesham katnam from CotTheta LLC for mentoring and guidance throughout this project.
 
 This updated README provides a comprehensive overview of your project, including installation instructions, usage, and detailed descriptions of each file's functionality, specifically highlighting the license and bank card recognition features, as well as the document detection capabilities, including handling multiple paragraphs and handwritten paragraphs using the Google Cloud Vision API. The additions also include descriptions for the testing scripts and the experimental auto-rotation script.
